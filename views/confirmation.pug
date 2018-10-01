@@ -1,0 +1,155 @@
+extends layout
+
+block content
+  main.container
+    header.row
+      .col.s8.offset-s2
+        img(src="/img/pic.png")
+      h3.col.s4.offset-s4 7-11 août 2018
+    .row#bg-white
+      .col.s12.m8.offset-m2
+        .row
+          .col.s12.center
+            img(src="/img/eclair.png")
+          .col.s12
+            h5 Infos pratiques
+            p Salut
+              span.chip #{prenom}
+              | , un message de confirmation qui récapitule ce qu'il y a à savoir va t'être envoyé sur ton adresse e-mail. Vérifie tes spams si nécessaire. Sinon, voici un petit rappel de tes dates à Pic. Tu viens du
+              span.chip #{arrivee}
+              | au
+              span.chip #{depart}
+              | (la semaine du 7 au 11 août 2018). Tu as participé aux frais à la hauteur de
+              span.chip #{prix} €
+              | . On va être 250 personnes en tout cette année :)
+          .col.s12
+            h5 Contact
+            p Adresse: Pic, 09190 Montjoie-en-Couserans, Ariège, France (Chez Richard Couzinet)
+            p
+              a.chip(href="https://goo.gl/maps/0IodI" target="_blank" title="carte")
+                i.material-icons location_on
+                b https://goo.gl/maps/0IodI
+              a.chip(href="mailto:bonjour@picfestival.com" target="_blank" title="mail")
+                i.material-icons mail_outline
+                b bonjour@picfestival.com
+          .col.s12
+            h5 Les dates :
+            p Le festival aura lieu du mardi 7 après-midi au samedi 11 au soir.
+            p Le démontage des installations se fera le samedi 11 août ! Et oui, pas de grosse soirée concert le samedi mais plutôt une redescente tranquille avec du son acoustique et une grande procession. Le dernier repas sera donc servi le samedi 11 août soir.
+          .col.s12
+            h5 Chacun vient muni de :
+            ul.collection
+              li.collection-item son moyen de dodo préféré (tente, hamac, fourgon, camping-car, cabane, tapis, etc.)
+              li.collection-item d'une assiette, d'un couteau, d'une fourchette, d'une cuillère qu'on accepte de céder à Pic
+              li.collection-item sa lampe frontale
+              li.collection-item des déguisements pour une grande journée/soirée déguisée !
+              li.collection-item NB: Le bar ne proposera que de la bière, du vin et des « softs », mais libre à chacun d'apporter ce que bon lui semble (et de faire goûter les copains!).
+          .col.s12
+            h5 Comment venir :
+            ul.collection
+              li.collection-item
+                p Si tu es véhiculé:
+                p De Toulouse, prendre l'A64 direction Tarbes. Sortie 23 Cazeres. Suivez la route direction Sainte Croix Volvestre. A Sainte Croix Volvestre, suivre direction Saint-Girons. Vous passez:Merigon , Montardit, Audinac les bains. 3km après Audinac direction Montjoie. À Montjoie, au premier et seul stop, prenez à droite. Continuez tout droit jusqu'à un tout petit panneau Pic sur la gauche (virage en épingle)-voie sans issue. Montez et vous y êtes!
+                  em  et en 
+                    a(href="https://www.togetzer.com/covoiturage-evenement/vfi25w " target="_blank") covoiturage
+              li.collection-item
+                p Si tu n'as pas de voiture:
+                p gare sncf la plus proche: Saint Girons + 1h30 de marche ou 15 min en voiture (autostop!)
+                p
+                  em et en 
+                    a(href="https://www.togetzer.com/covoiturage-evenement/vfi25w " target="_blank") covoiturage
+          .col.s12
+            h5 Argent et participation :
+            p A Pic, on échange ses euros contre des PIC'SOUS, monnaie d'échange locale pour le bar.
+            p L'équipe d'organisateurs participe aux frais à la même hauteur que les invités; on est tous des participants!
+            p Les spectacles, concerts et autres activités sont proposés bénévolement !
+            p Sur place chacun donne la main à la pâte (ce qui garantit un bon fonctionnement général et que ce soit pas cher !). Il s'agit, entre autres choses, d'aider à la cuisine, de prendre en charge le bar pour une soirée, de nettoyer les toilettes, d'aider aux mises en place des spectacles et concerts, etc…
+          .col.s12
+            h5 Remboursement
+            p Si finalement tu ne pouvais pas venir à Pic (et avec un bon motif exclusivement) et que tu nous préviens avant le 1er juillet les frais du festival et les repas pourront t’être remboursés (la cotisation non, on la garde). Après le 1er juillet par contre, on ne pourra plus te rembourser, car une grande partie des frais seront déjà engagés.
+            p Pour toutes questions, nous contacter par mail : bonjour@picfestival.com
+          .col.s12.center
+            img(src="/img/eclair.png")
+          .col.s12
+            h5 La « raison d'être » :
+            p S’offrir le plaisir de partager une aventure ensemble durant quelques jours d’été en mettant en commun ce(ux) qu’on aime.
+          .col.s12
+            h5 La « charte » :
+            .row
+              p.col.s12.m4
+                b Pic est une aventure:
+                | Un lieu, un temps, et l’acte de moquer et célébrer le temps qui passe au travers d’une grande fête de copains estivale.
+              p.col.s12.m4
+                b Pic est une joyeuse bande ouverte à tous:
+                | D’ici et d’ailleurs, d’avant et de bientôt, qui ne connaît ni âge minimum ni âge limite, Pic est simplement le reflet de tous ceux qui souhaitent y prendre part.
+              p.col.s12.m4
+                b Pic est participatif:
+                | C’est un endroit où tout le monde ferait tout, et personne ne ferait rien, que les autres ne feraient pas. Pas de distinction entre organisateurs et participants chacun y est tour à tour acteur et spectateur.
+              p.col.s12.m4
+                b Pic est une page blanche à écrire:
+                | C’est parce que chacun vient avec ses propres idées et envies que cette aventure existe ! À Pic, on donne, on reçoit, on partage au sein d’un grand terrain de jeu verdoyant.
+              p.col.s12.m4
+                b Pic c’est faire au mieux avec les moyens du bord:
+                | Chaque année nous prouvons qu’avec peu de moyens et beaucoup de joie il est possible de créer un événement de grande qualité pour le plaisir de tous !
+              p.col.s12.m4
+                b Pic est non lucratif:
+                | Aucun bénéfice n’est réalisé et lorsque - ôh miracle - la caisse n’est pas vide à la fin de l’aventure, elle est réutilisée l’année suivante. Aucune activité lucrative n’est donc possible sur place.
+              p.col.s12
+                b À Pic tu es responsable:
+                | De toi et de tes actes bien sûr, mais surtout des autres. On demande à ceux qui se sont fait manger leur sac de couchage par un ours si on peut les aider, on désamorce les combats de coqs et on se partage toutes les responsabilités à tous moments.
+          .col.s12
+            h5 Le « règlement interieur » :
+            p
+            small Toute personne qui arrive sur le site, habitué ou grand débutant, et toute personne qui part prématurément doit se signaler auprès de l’accueil.
+            p
+              small Participer, c’est s’engager.. et donc prendre les responsabilités qui incombent à chaque tâche.
+            p
+              small Tout le monde paie ses consommations, pas de privilèges! Les verres du bar sont consignés, la consigne peut être rendue jusqu’à la fin du festival si le verre n’a pas été détérioré.
+            p
+              small Ne sont habilitées à vendre des PIC’sous que les personnes désignées à l’accueil.
+            p
+              small Chaque participant amène une assiette et des couverts (fourchette, couteau, cuillère) et qui resteront acquis.
+            p
+              small PIC possède une monnaie locale le PIC’SOUS qui ne sert de monnaie d’échange qu’au bar. Toute vente est par ailleurs interdite.
+            p
+              small Ne peuvent être derrière le bar que les personnes prévues dans le planning.
+            p
+              small Ne pas intervenir sur les dispositifs dangereux (groupes électrogènes, électricité, gaz, outils, essence,…) ou fragiles (tireuse, scène, …) s’ils ne sont pas sous votre responsabilité.
+            p
+              small Respecter les zones de parking distinctes des zones d’hébergement. Ne stationner que sur les zones prévues à cet effet.
+            p
+              small Pour manger à la cantine de Pic, il faut donner son ticket ! (et respecter les heures de repas proposées).
+            p
+              small Ne pas hésiter à s’informer sur les activités proposées dans la programmation.
+            p
+              small La techno-base permettant de faire la fête jusqu’au bout de la nuit et dans le cadre des activités proposées dans la programmation, le volume sonore sur les lieux de couchage doit rester limité afin de respecter le sommeil des participants.
+            p
+              small Respecter les zones et les règles de tri de déchets sur le site (merci de jeter vos mégots dans les poubelles de déchets ménagers).
+            p
+              small Laisser les lieux propres après votre passage (toilettes, espaces nuit, espaces communs, tables) et éviter toute dégradation des installations.
+            p
+              small Etre autonome sur la gestion de son hébergement (tente, camion, …).
+            p
+              small Ne pas introduire d’arme sur le site.
+            p
+              small Toute vente et consommation de drogues est interdite dans l’enceinte de Pic.
+            p
+              small Les animaux sont autorisés sous la responsabilité de leur propriétaire et leurs adorables déjections doivent être ramassées. Ils ne sont pas les bienvenus dans les espaces intérieurs (cuisine, maisons,…).
+            p
+              small Les enfants - mineurs restent sous la responsabilité de leurs parents/responsables légaux et doivent rester sous leur surveillance.
+            p
+              small Toute activité non proposée dans le cadre des évènements de l’association engage la seule responsabilité de ceux-celles qui l’entreprennent.
+            p
+              small Respecter les zones de non accessibilité indiquées qui sont notifiées.
+            p
+              small Demander à leurs propriétaires la permission d’utiliser les objets/outils présents sur le site.
+            p
+              small S’engager à participer aux différentes tâches selon les modalités proposées.
+            p
+              small Prendre soin de soi-même et des autres.
+            p
+              small Si vous proposez une activité qui n’était pas prévue initialement, se mettre en contact avec le pôle accueil de PIC.
+          .col.s12.center
+            img(src="/img/eclair.png")
+    .center
+      img(src="/img/logo.png")

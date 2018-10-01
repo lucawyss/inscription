@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  nav
+    .nav-wrapper
+      a.brand-logo(href="#!")= titre
+      ul.right.hide-on-med-and-down
+        li #{inscrits} participants
+        li
+          a#datatables
+            i.material-icons search
+  main.tableau(class= query)
+    -if(typeof db == "object")
+      .row
+        table#tableau.col.s12.striped.responsive-table
+          thead#tableau-th
+            tr
+              -for(var key in db[0])
+                unless(key == '_id')
+                  -if(typeof db[0][key] == "object")
+                    th(class= key + ' toogle')
+                      button.btn-floating.waves-effect.waves-light(type="button" onclick='$(".' + key + ':not(\'.toogle\')" ).toggle();')
+                        i.material-icons.right add
+                      br
+                      | #{key}
+                    -for(var j in db[0][key])
+                      th(class= key + ' ' + j) #{j}
+                  -else
+                    th(class= key) #{key}
+          tbody#tableau-td
+            -for(var i in db)
+              tr
+                -for(var key in db[0])
+                  unless(key == '_id')
+                    -if(typeof db[i][key] == "object")
+                      -if(key == 'contacts')
+                        th(class= key + ' toogle') #{db[i].contacts.prenom} #{db[i].contacts.nom}
+                      -else
+                        th(class= key + ' toogle')
+                      -for(var j in db[0][key])
+                        if(db[i][key][j] == 'true')
+                          td(class= key + ' ' + j)
+                            i.material-icons check
+                        else if(db[i][key][j] == 'false')
+                          td(class= key + ' ' + j)
+                            i.material-icons close
+                        else
+                          td(class= key + ' ' + j) #{db[i][key][j]}
+                    -else
+                      td(class= key) #{db[i][key]}
+        // pre.col.s12 #{ JSON.stringify(db) }
+
+block script
+  script(src="/js/vendor.js")
+  script.
+    $('#datatables').click(function(){
+      $('table').DataTable({
+        "dom": '<"row"<"col s12 m4"B><"col s12 m4"f><"col s12 m4 right-align"pirl>>t',
+        "pageLength": 50,
+        "lengthChange": false,
+        "info": false,
+        "language": {
+            search: "_INPUT_",
+            searchPlaceholder: "Recherche"
+        },
+        "buttons": [
+            { extend: 'print', className: 'waves-effect waves-light btn' }
+        ]
+      });
+    });

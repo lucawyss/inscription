@@ -1,0 +1,167 @@
+extends layout
+
+block content
+  main.container
+    header.row
+      .col.s8.offset-s2
+        img(src="/img/pic.png")
+    .row#bg-white
+      .col.s12.m8.offset-m2
+        h3 Salut salut, je suis ton pote l'ordinateur et j'ai toutes les infos dont tu as besoin mon petit orga bien aimé
+        a(href="/logout") Se déconnecter
+        br
+        h5 data du festival
+        .row
+          .col.s12.m6
+            p personnes sur le site 
+            p inscrits :
+              .chip #{inscrits}
+              | , nbEnfants : 
+              .chip #{nbEnfants}
+            canvas#chartMain(width="400" height="400")
+          .col.s12.m6
+            p argent reçu
+            p payement : 
+              .chip #{payement}
+              | , forfait : 
+              .chip #{payementForfait}
+              | , repas : 
+              .chip #{payementRepas}
+              | , caisse : 
+              .chip #{caisse}
+            canvas#chartMoney(width="400" height="400")
+          .col.s12.m6
+            p nombre de repas
+            p nbRepas : 
+              .chip #{nbRepas}
+            canvas#chartFood(width="400" height="400")
+          .col.s12.m6
+            p préférence alimentaire
+            p prefSansPorc : 
+              .chip #{prefSansPorc}
+              | , prefSansGluten : 
+              .chip #{prefSansGluten}
+              | , prefSansViande : 
+              .chip #{prefSansViande}
+            canvas#chartPref(width="400" height="400")
+        br
+        h5 listes des participants par pôle
+        ul
+          li Programmation (propositions des participants) 
+          li 
+            a.btn-flat(href="/tableau/prog") voir online
+            |  ° 
+            a.btn(href="/csv/prog") telecharger excel
+          li Acceuil (contacts & dates d'arrivée/départ)
+          li
+            a.btn-flat(href="/tableau/acceuil") voir online
+            |  ° 
+            a.btn(href="/csv/acceuil") telecharger excel
+          li Santé (nos beaux infirmiers)
+          li
+            a.btn-flat(href="/tableau/sante") voir online
+            |  ° 
+            a.btn(href="/csv/sante") telecharger excel
+          li Compétences (les bricolos)
+          li
+            a.btn-flat(href="/tableau/bricolos") voir online
+            |  ° 
+            a.btn(href="/csv/bricolos") telecharger excel
+        br
+        h5 envoie du mail de rappel (juste avant le festival)
+        p 
+          a.btn(href="/rappel") ENVOYER A TOUS
+        br
+
+block script
+  script(src="/js/vendor.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js")
+  script.
+    var ctx1 = document.getElementById("chartMain").getContext('2d');
+    var chartMain = new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: ["inscrits", "enfants"],
+            datasets: [{
+                data: [#{inscrits}, #{nbEnfants}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+            borderWidth: 0
+            }]
+        }
+    });
+    var ctx2 = document.getElementById("chartMoney").getContext('2d');
+    var chartMain = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ["inscriptions payés", "caisse de solidarité"],
+            datasets: [{
+                data: [#{payement}, #{caisse}],
+                backgroundColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(153, 102, 255, 1)'
+                ],
+            borderWidth: 0
+            }]
+        }
+    });
+    var ctx3 = document.getElementById("chartFood").getContext('2d');
+    var chartMain = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ["nombre de repas"],
+            datasets: [{
+                label: 'repas',
+                data: [#{nbRepas}],
+                backgroundColor: [
+                'rgba(54, 162, 235, 0.8)'
+                ],
+                borderColor: [
+                'rgba(54, 162, 235, 1)'
+                ],
+            borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    var ctx4 = document.getElementById("chartPref").getContext('2d');
+    var chartMain = new Chart(ctx4, {
+        type: 'bar',
+        data: {
+            labels: ["sans porc", "sans gluten", "sans viande"],
+            datasets: [{
+                label: 'préférence alimentaires',
+                data: [#{prefSansPorc}, #{prefSansGluten}, #{prefSansViande}],
+                backgroundColor: [
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)'
+                ],
+                borderColor: [
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+                ],
+            borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });

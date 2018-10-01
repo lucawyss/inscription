@@ -1,0 +1,38 @@
+{
+  "name": "Inscription",
+  "version": "0.9.0",
+  "description": "billeterie pour fête entre ami-e-s",
+  "homepage": "https://github.com/lucawyss",
+  "keywords": [
+    "express"
+  ],
+  "engines": {
+    "node": "6",
+    "npm": "*"
+  },
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "csv": "^3.1.0",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "https": "^1.0.0",
+    "less-middleware": "^3.0.0",
+    "mongojs": "^2.6.0",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "stripe": "^6.1.1",
+    "striptags": "^3.1.1"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}

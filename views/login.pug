@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  main.container
+    header.row
+      .col.s8.offset-s2
+        img(src="/img/pic.png")
+    .row#bg-white
+      .col.s12.m8.offset-m2
+        if !user
+          p Salut petite orga, je suis un ordinateur, mais je suis sympa quand même :)
+          form(action='/login',method='post')
+            div
+              label Username:
+              input(type="text" name="username")
+            div
+              label Password:
+              input(type="password" name="password")
+            div
+              input(type="submit" value="Log In")
+        else
+          p Bon, j'aime bien discuter mais en fait, t'es déjà connecté-e. Tu peux aller directement au #[a(href="/tableau") Tableau des participants]
+        br
