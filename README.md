@@ -6,4 +6,4 @@ npm start
 http://localhost:8080
 
 ## TODO
-- config file
+- [ ] config file
