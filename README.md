@@ -15,6 +15,7 @@ billeterie pour fête entre ami-e-s
 - [ ] config file
 - [ ] customize form based on config
 - [ ] customize template based on config
+- [ ] add config page on admin
 - [ ] add to npm
 
 ## Run local
