@@ -1,6 +1,8 @@
 INSCRIPTION
 billeterie pour fête entre ami-e-s
 
+Démarée pour le [picfestival](http://picfestival.com/), on s'est dit que ça pourrait servir pour les autres ami-e-s qui organisent des fêtes pendant l'été. 🤩
+
 ## Features
 - formulaire simple pour les inscriptions
 - mot de passe pour garder privé l'évènement
