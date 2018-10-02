@@ -2,10 +2,7 @@
   "name": "Inscription",
   "version": "0.9.0",
   "description": "billeterie pour fête entre ami-e-s",
-  "homepage": "https://github.com/lucawyss",
-  "keywords": [
-    "express"
-  ],
+  "homepage": "https://github.com/lucawyss/inscription",
   "engines": {
     "node": "6",
     "npm": "*"
@@ -31,7 +28,6 @@
     "stripe": "^6.1.1",
     "striptags": "^3.1.1"
   },
-  "private": true,
   "scripts": {
     "start": "node server.js"
   }
